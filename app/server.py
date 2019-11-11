@@ -9,10 +9,10 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://www.dropbox.com/s/6bgq8t6yextloqp/export.pkl?raw=1'
+export_file_url = 'https://www.googleapis.com/drive/v3/files/1-4Bszwv0HDTmHd2LEQmDl3KfMP0z9PuC?alt=media&key=AIzaSyBg-HoeVUlHZNf5YgAtPmhDFNrVnAD-WuQ'
 export_file_name = 'export.pkl'
 
-classes = ['black', 'grizzly', 'teddys']
+classes = ['Sample001','Sample002','Sample003','Sample004','Sample005','Sample006','Sample007','Sample008','Sample009','Sample010','Sample011','Sample012','Sample013','Sample014','Sample015','Sample016','Sample017','Sample018','Sample019','Sample020','Sample021','Sample022','Sample023','Sample024','Sample025','Sample026','Sample027','Sample028','Sample029','Sample030','Sample031','Sample032','Sample033','Sample034','Sample035','Sample036','Sample037','Sample038','Sample039','Sample040','Sample041','Sample042','Sample043','Sample044','Sample045','Sample046','Sample047','Sample048','Sample049','Sample050','Sample051','Sample052','Sample053','Sample054','Sample055','Sample056','Sample057','Sample058','Sample059','Sample060','Sample061','Sample062']
 path = Path(__file__).parent
 
 app = Starlette()
