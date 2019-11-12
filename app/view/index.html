@@ -14,7 +14,11 @@
     </p>
     <div class='content'>
       <div class='no-display'>
-        <input id='file-input'
+          <form method=post enctype=multipart/form-data>
+            <input id='file-input' type=file name=file>
+            <input type=submit value=Upload>
+          </form>
+        <input id='file-input-old'
                class='no-display'
                type='file'
                name='file'
