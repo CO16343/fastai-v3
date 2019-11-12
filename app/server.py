@@ -200,7 +200,7 @@ async def analyze(request):
 #	    final_out = final_out + letter_seg(lines_img, x_lines, i)	#all
 	    #print(i)
     #prediction = learn.predict(img)[0]
-    return JSONResponse({'result': final_out+str(type(img))+' '+str(img)})
+    return JSONResponse({'result': final_out+str(type(img))+' and '+str(img)})
 
 
 if __name__ == '__main__':
