@@ -193,8 +193,8 @@ async def analyze(request):
     print(img)
 #    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     #cv2.imwrite('new.jpg',gray)
-    img2 = cv2.imread(img,1) 
-    lines, lines_img, x_lines = start_main(img2)
+    #img2 = cv2.imread(img,1) 
+    img2 = cv2.resize(img, dsize =(1320, int(1320*height/width)), interpolation = cv2.INTER_AREA)#lines, lines_img, x_lines = start_main(img2)
     final_out = ''
 #    for i in range(len(lines)):    # i is the line number
 #	    final_out = final_out + letter_seg(lines_img, x_lines, i)	#all
