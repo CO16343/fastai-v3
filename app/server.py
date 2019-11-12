@@ -1,6 +1,7 @@
 import aiohttp
 import asyncio
 import uvicorn
+import cv2
 from fastai import *
 from fastai.vision import *
 from io import BytesIO
@@ -190,7 +191,7 @@ async def analyze(request):
     img = open_image(BytesIO(img_bytes))
     print(type(img))
     print(img)
-    gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     #cv2.imwrite('new.jpg',gray)
     #img2 = cv2.imread('new.jpg',1) 
     lines, lines_img, x_lines = start_main(gray)
