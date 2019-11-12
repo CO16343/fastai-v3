@@ -194,13 +194,13 @@ async def analyze(request):
 #    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     #cv2.imwrite('new.jpg',gray)
     #img2 = cv2.imread('new.jpg',1) 
-#    lines, lines_img, x_lines = start_main(gray)
+    lines, lines_img, x_lines = start_main(img_bytes)
     final_out = ''
-#    for i in range(len(lines)):    # i is the line number
-#	    final_out = final_out + letter_seg(lines_img, x_lines, i)	#all
+    for i in range(len(lines)):    # i is the line number
+	    final_out = final_out + letter_seg(lines_img, x_lines, i)	#all
 	    #print(i)
-    #prediction = learn.predict(img)[0]
-    return JSONResponse({'result': final_out+str(type(img))+' and '+str(img)})
+    #prediction = learn.predict(img)[0]-bytes
+    return JSONResponse({'result': final_out+str(type(img))+' and '+img + 'and' + img_bytes + img_data})
 
 
 if __name__ == '__main__':
