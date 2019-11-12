@@ -126,7 +126,8 @@ def start_main(src_img):
 #    src_img= cv2.imread('/content/text.jpg',1)
     #print(src_img)
 #   cv2_imshow(src_img)
-    copy = src_img.copy()
+
+    copy = cv2.cvtColor(src_img, cv2.COLOR_RGB2GRAY)
     height = src_img.shape[0]
     width = src_img.shape[1]
 
