@@ -3,7 +3,7 @@ FROM python:3.7-slim-stretch
 RUN apt-get update && apt-get install -y git python3-dev gcc \
     && rm -rf /var/lib/apt/lists/*
 
-docker pull jjanzic/docker-python3-opencv
+PULL jjanzic/docker-python3-opencv
 
 COPY requirements.txt .
 
