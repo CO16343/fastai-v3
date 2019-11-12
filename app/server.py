@@ -11,7 +11,7 @@ from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 from char_seg import *
 
-
+import numpy as np
 import os
 from flask import Flask, flash, request, redirect, url_for
 from werkzeug.utils import secure_filename
@@ -235,8 +235,10 @@ async def analyze(request):
     print(img)
 #    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     #cv2.imwrite('new.jpg',gray)
-    #img2 = cv2.imread(img,1) 
-    img2 = cv2.resize(img, dsize =(1320, int(1320*250/500)), interpolation = cv2.INTER_AREA)#lines, lines_img, x_lines = start_main(img2)
+    #img2 = cv2.imread(img,1)
+    img4 = np.asarray(bytearray(img), dtype="uint8")
+    img2 = cv2.imdecode(img4, cv2.IMREAD_COLOR)
+    img3 = cv2.resize(img2, dsize =(1320, int(1320*250/500)), interpolation = cv2.INTER_AREA)#lines, lines_img, x_lines = start_main(img2)
     final_out = ''
 #    for i in range(len(lines)):    # i is the line number
 #	    final_out = final_out + letter_seg(lines_img, x_lines, i)	#all
