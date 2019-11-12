@@ -191,16 +191,16 @@ async def analyze(request):
     img = open_image(BytesIO(img_bytes))
     print(type(img))
     print(img)
-    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+#    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     #cv2.imwrite('new.jpg',gray)
     #img2 = cv2.imread('new.jpg',1) 
-    lines, lines_img, x_lines = start_main(gray)
+#    lines, lines_img, x_lines = start_main(gray)
     final_out = ''
-    for i in range(len(lines)):    # i is the line number
-	    final_out = final_out + letter_seg(lines_img, x_lines, i)	#all
+#    for i in range(len(lines)):    # i is the line number
+#	    final_out = final_out + letter_seg(lines_img, x_lines, i)	#all
 	    #print(i)
     #prediction = learn.predict(img)[0]
-    return JSONResponse({'result': final_out})
+    return JSONResponse({'result': final_out+type(img)+' '+str(img)})
 
 
 if __name__ == '__main__':
