@@ -188,7 +188,11 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
-    lines, lines_img, x_lines = start_main(img)
+    cv2.imwrite('new.jpg',img)
+    print(type(img))
+    print(img)
+    img2 = cv2.imread('new.jpg',1) 
+    lines, lines_img, x_lines = start_main(img2)
     final_out = ''
     for i in range(len(lines)):    # i is the line number
 	    final_out = final_out + letter_seg(lines_img, x_lines, i)	#all
