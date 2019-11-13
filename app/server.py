@@ -251,10 +251,10 @@ async def analyze(request):
     final_out = ''
     lines, lines_img, x_lines = start_main(img)
     for i in range(len(lines)):    # i is the line number
-	    final_out = final_out + '&nbsp'+ letter_seg(lines_img, x_lines, i)	#all
+	    final_out = final_out + '\\n'+ letter_seg(lines_img, x_lines, i)	#all
 	    #print(i)
     #prediction = learn.predict(img)[0]-bytes
-    return JSONResponse({'result': final_out+'hoiih' })
+    return JSONResponse({'result': final_out })
 
 
 if __name__ == '__main__':
