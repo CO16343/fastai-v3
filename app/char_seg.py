@@ -107,7 +107,7 @@ def letter_width(contours):
 
 
 
-def end_wrd_dtct(lines, i, bin_img, mean_lttr_width,width):
+def end_wrd_dtct(lines, i, bin_img, mean_lttr_width,width,final_thr):
 	count_y = np.zeros(shape = width)
 	for x in range(width):
 		for y in range(lines[i][0],lines[i][1]):
@@ -217,7 +217,7 @@ def start_main(src_img):
     x_lines = [] # these are for word detection in the line
 
     for i in range(len(lines_img)):
-        x_lines.append(end_wrd_dtct(lines, i, bin_img, mean_lttr_width,width))
+        x_lines.append(end_wrd_dtct(lines, i, bin_img, mean_lttr_width,width,final_thr))
 
     for i in range(len(x_lines)):
         x_lines[i].append(width)
