@@ -122,7 +122,7 @@ def end_wrd_dtct(lines, i, bin_img, mean_lttr_width):
 
 
 def start_main(src_img):
-#   print("\n........Program Initiated.......\n")
+   print("\n........Program Initiated.......\n")
 #    src_img= cv2.imread('/content/text.jpg',1)
     #print(src_img)
 #   cv2_imshow(src_img)
@@ -132,20 +132,20 @@ def start_main(src_img):
     width = src_img.shape[1]
 
 
-#    print("\n Resizing Image........")
+    print("\n Resizing Image........")
     src_img = cv2.resize(copy, dsize =(1320, int(1320*height/width)), interpolation = cv2.INTER_AREA)
 
     height = src_img.shape[0]
     width = src_img.shape[1]
 
-#    print("#---------Image Info:--------#")
-#    print("\tHeight =",height,"\n\tWidth =",width)
-#    print("#----------------------------#")
+    print("#---------Image Info:--------#")
+    print("\tHeight =",height,"\n\tWidth =",width)
+    print("#----------------------------#")
 
     grey_img = cv2.cvtColor(src_img, cv2.COLOR_BGR2GRAY)
 
 
-#    print("Applying Adaptive Threshold with kernel :- 21 X 21")
+    print("Applying Adaptive Threshold with kernel :- 21 X 21")
     bin_img = cv2.adaptiveThreshold(grey_img,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY_INV,21,20)
     bin_img1 = bin_img.copy()
     bin_img2 = bin_img.copy()
@@ -199,7 +199,7 @@ def start_main(src_img):
 
     no_of_lines = len(lines)
 
-#   print("\nGiven Text has   # ",no_of_lines, " #   no. of lines")
+   print("\nGiven Text has   # ",no_of_lines, " #   no. of lines")
 
     lines_img = []
 
@@ -222,6 +222,6 @@ def start_main(src_img):
     for i in range(len(x_lines)):
         x_lines[i].append(width)
 
-#    print(x_lines)
+    print(x_lines)
             
     return lines, lines_img, x_lines
