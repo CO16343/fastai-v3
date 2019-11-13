@@ -7,10 +7,9 @@
 <body>
 <div>
   <div class='center'>
-    <div class='title'>Classify Bear Images 🐻</div>
-    <p>
-      Use images of <strong>teddy</strong> bears, <strong>black</strong> bears, <strong>grizzly</strong> bears, or
-      all three!
+    <div class='title'>Optical Character Recognization</div>
+    <p class='text'>
+      Input the Text image......
     </p>
     <div class='content'>
       <div class='no-display'>
@@ -21,16 +20,45 @@
                accept='image/*'
                onchange='showPicked(this)'>
       </div>
-      <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
-      <div class='upload-label'>
-        <label id='upload-label'>No file chosen</label>
-      </div>
-      <div>
-        <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
-      </div>
-      <div class='analyze'>
-        <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
-      </div>
+
+      <div id = "boxes"> 
+          
+        <div id = "leftbox"> 
+            <h2 class='text_in'>Image:</h2> 
+            
+            <div>
+              <img id='image-picked' class='no-display' alt='Chosen Image' width=95%>
+            </div>
+            <div class='upload-label'>
+              <label id='upload-label'>No file chosen</label>
+            </div>
+        </div>  
+          
+        <div id = "middlebox"> 
+            <h2 class='text_in'>Action:</h2> 
+            <div class='select'>
+            <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
+            </div>
+            <div class='analyze'>
+              <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
+            </div>
+        </div> 
+          
+        <div id = "rightbox"> 
+            <h2 class='text_in'>Result:</h2> 
+            <div class='process-label'>
+              <label id='process-label'></label>
+            </div>
+            <div class='result-label'>
+              <label id='result-label'></label>
+            </div>
+        </div> 
+    </div> 
+
+
+      
+      
+      
       <div class='result-label'>
         <label id='result-label'></label>
       </div>
