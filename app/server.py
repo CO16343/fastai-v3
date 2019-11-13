@@ -179,7 +179,7 @@ def letter_seg(lines_img, x_lines, i):
 	word = 1
 	letter_index = 0
 	#to show line
-	cv2_imshow(lines_img[i][letter[0][1]-5:letter[len(letter)-1][1]+letter[len(letter)-1][3]+5,letter[0][0]-5:letter[len(letter)-1][0]+letter[len(letter)-1][2]+5])
+	#cv2_imshow(lines_img[i][letter[0][1]-5:letter[len(letter)-1][1]+letter[len(letter)-1][3]+5,letter[0][0]-5:letter[len(letter)-1][0]+letter[len(letter)-1][2]+5])
 	#cv2_imshow(lines_img[i][letter[0][1]-5:letter[len(letter)-1][1]+letter[len(letter)-1][3]+5,x_linescopy[0]-5:letter[len(letter)-1][0]+letter[len(letter)-1][2]+5])
 	line_of_word=''
 	for e in range(len(letter)):
@@ -189,10 +189,11 @@ def letter_seg(lines_img, x_lines, i):
 			letter_img = cv2.resize(letter_img_tmp, dsize =(124, 124), interpolation = cv2.INTER_AREA)
 			White = [0,0]
 			letter_img= cv2.copyMakeBorder(letter_img.copy(),50,50,50,50,cv2.BORDER_CONSTANT,value=White)
-			cv2.imwrite('check.jpg', 255-letter_img)
+			cut_img = cv2.imdecode(255-letter_img)
+			#cv2.imwrite('check.jpg', 255-letter_img)
 			time.sleep(0.1)
-			img = open_image('check.jpg')
-			pred_class,pred_idx,outputs = learn.predict(img)
+			#img = open_image('check.jpg')
+			pred_class,pred_idx,outputs = learn.predict(cut_img)
 			#cv2_imshow(255-letter_img)
 			#print(pred_class)
 			#print(mapping[str(pred_class)])
@@ -206,10 +207,11 @@ def letter_seg(lines_img, x_lines, i):
 			letter_img = cv2.resize(letter_img_tmp, dsize =(124, 124), interpolation = cv2.INTER_AREA)
 			White = [0,0]
 			letter_img= cv2.copyMakeBorder(letter_img.copy(),50,50,50,50,cv2.BORDER_CONSTANT,value=White)
-			cv2.imwrite('check.jpg', 255-letter_img)
+			cut_img = cv2.imdecode(255-letter_img)
+			#cv2.imwrite('check.jpg', 255-letter_img)
 			time.sleep(0.1)
-			img = open_image('check.jpg')
-			pred_class,pred_idx,outputs = learn.predict(img)
+			#img = open_image('check.jpg')
+			pred_class,pred_idx,outputs = learn.predict(cut_img)
 			#cv2_imshow(255-letter_img)
 			#print(pred_class)
 			#print(mapping[str(pred_class)])
