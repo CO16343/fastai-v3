@@ -72,7 +72,8 @@ def refine_endword(array):
 	for y in range(len(array)-1):
 		if array[y]+1 < array[y+1]:
 			refine_list.append(array[y])
-	refine_list.append(array[-1])
+	if len(array):
+		refine_list.append(array[-1])
 	return refine_list
 
 
@@ -210,9 +211,9 @@ def start_main(src_img):
     final_contr = np.zeros((final_thr.shape[0],final_thr.shape[1],3), dtype = np.uint8)
     cv2.drawContours(src_img, contours, -1, (0,255,0), 1)
 
-    mean_lttr_width = letter_width(contours)
+    mean_lttr_width = letter_width(contours)/2
     print("\nAverage Width of Each Letter:- ", mean_lttr_width)
-    mean_lttr_width=9 ############# this i have done for testing and added manually original was 19.85 and gives better result
+    #mean_lttr_width=9 ############# this i have done for testing and added manually original was 19.85 and gives better result
 
     x_lines = [] # these are for word detection in the line
 
