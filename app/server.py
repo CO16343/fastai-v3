@@ -245,10 +245,11 @@ async def analyze(request):
     #img2 = cv2.imread(img,1)
 #    img4 = np.asarray(bytearray(img), dtype="uint8")
 #    img2 = cv2.imdecode(img, cv2.IMREAD_COLOR)
-#    img3 = cv2.resize(img2, dsize =(1320, int(1320*250/500)), interpolation = cv2.INTER_AREA)#lines, lines_img, x_lines = start_main(img2)
+    img3 = cv2.resize(img, dsize =(1320, int(1320*250/500)), interpolation = cv2.INTER_AREA)#lines, lines_img, x_lines = start_main(img2)
     final_out = ''
-#    for i in range(len(lines)):    # i is the line number
-#	    final_out = final_out + letter_seg(lines_img, x_lines, i)	#all
+    lines, lines_img, x_lines = start_main(img)
+    for i in range(len(lines)):    # i is the line number
+	    final_out = final_out + letter_seg(lines_img, x_lines, i)	#all
 	    #print(i)
     #prediction = learn.predict(img)[0]-bytes
     return JSONResponse({'result': final_out+'hoiih' })
