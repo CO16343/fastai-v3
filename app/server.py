@@ -102,7 +102,7 @@ def letter_seg(lines_img, x_lines, i):
 	letter_img = []
 	letter_k = []
 	
-	x, contours, hierarchy = cv2.findContours(copy_img,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)	
+	contours, hierarchy = cv2.findContours(copy_img,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)	
 	for cnt in contours:
 		if cv2.contourArea(cnt) > 50:
 			x,y,w,h = cv2.boundingRect(cnt)
