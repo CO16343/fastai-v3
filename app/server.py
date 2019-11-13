@@ -231,20 +231,20 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
-    print(type(img))
+    print(type(img_bytes))
     print(img)
 #    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     #cv2.imwrite('new.jpg',gray)
     #img2 = cv2.imread(img,1)
 #    img4 = np.asarray(bytearray(img), dtype="uint8")
-    img2 = cv2.imdecode(img, cv2.IMREAD_COLOR)
-    img3 = cv2.resize(img2, dsize =(1320, int(1320*250/500)), interpolation = cv2.INTER_AREA)#lines, lines_img, x_lines = start_main(img2)
+#    img2 = cv2.imdecode(img, cv2.IMREAD_COLOR)
+#    img3 = cv2.resize(img2, dsize =(1320, int(1320*250/500)), interpolation = cv2.INTER_AREA)#lines, lines_img, x_lines = start_main(img2)
     final_out = ''
 #    for i in range(len(lines)):    # i is the line number
 #	    final_out = final_out + letter_seg(lines_img, x_lines, i)	#all
 	    #print(i)
     #prediction = learn.predict(img)[0]-bytes
-    return JSONResponse({'result': final_out+str(type(img))+' and '+img + 'and' + img_bytes + img_data})
+    return JSONResponse({'result': final_out+str(type(img))+' and '+img + 'and' + str(type(img_bytes)) })
 
 
 if __name__ == '__main__':
