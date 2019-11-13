@@ -217,7 +217,7 @@ def letter_seg(lines_img, x_lines, i):
 			#print(mapping[str(pred_class)])
 			line_of_word=line_of_word+' '+mapping[str(pred_class)]
 			# print(letter[e][0],x_linescopy[0], word)
-
+		print(line_of_word)
 	return line_of_word				
 
 
