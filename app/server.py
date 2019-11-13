@@ -237,7 +237,7 @@ async def analyze(request):
     #cv2.imwrite('new.jpg',gray)
     #img2 = cv2.imread(img,1)
 #    img4 = np.asarray(bytearray(img), dtype="uint8")
-    img2 = cv2.imdecode(img2, cv2.IMREAD_COLOR)
+    img2 = cv2.imdecode(img, cv2.IMREAD_COLOR)
     img3 = cv2.resize(img2, dsize =(1320, int(1320*250/500)), interpolation = cv2.INTER_AREA)#lines, lines_img, x_lines = start_main(img2)
     final_out = ''
 #    for i in range(len(lines)):    # i is the line number
