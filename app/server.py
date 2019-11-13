@@ -235,7 +235,7 @@ async def analyze(request):
     print(type(img_bytes))
     print(img)
     file_name = secure_filename(img_data['file'].filename)
-    file_path = os.path.join(app.config['imgdir'],file_name)
+    file_path = os.path.join(app.config.config['imgdir'],file_name)
     file.save(file_path)
     cv2.imread(file_path)
 #    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
