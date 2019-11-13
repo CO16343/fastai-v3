@@ -122,7 +122,7 @@ def end_wrd_dtct(lines, i, bin_img, mean_lttr_width):
 
 
 def start_main(src_img):
-   print("\n........Program Initiated.......\n")
+    print("\n........Program Initiated.......\n")
 #    src_img= cv2.imread('/content/text.jpg',1)
     #print(src_img)
 #   cv2_imshow(src_img)
@@ -199,7 +199,7 @@ def start_main(src_img):
 
     no_of_lines = len(lines)
 
-   print("\nGiven Text has   # ",no_of_lines, " #   no. of lines")
+    print("\nGiven Text has   # ",no_of_lines, " #   no. of lines")
 
     lines_img = []
 
