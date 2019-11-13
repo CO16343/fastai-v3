@@ -206,7 +206,7 @@ def start_main(src_img):
     for i in range(no_of_lines):
         lines_img.append(bin_img2[lines[i][0]:lines[i][1], :])
 
-    x, contours, hierarchy = cv2.findContours(contr_retrival,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+    contours, hierarchy = cv2.findContours(contr_retrival,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
     final_contr = np.zeros((final_thr.shape[0],final_thr.shape[1],3), dtype = np.uint8)
     cv2.drawContours(src_img, contours, -1, (0,255,0), 1)
 
