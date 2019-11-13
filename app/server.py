@@ -189,7 +189,7 @@ def letter_seg(lines_img, x_lines, i):
 			letter_img = cv2.resize(letter_img_tmp, dsize =(124, 124), interpolation = cv2.INTER_AREA)
 			White = [0,0]
 			letter_img= cv2.copyMakeBorder(letter_img.copy(),50,50,50,50,cv2.BORDER_CONSTANT,value=White)
-			cut_img = cv2.imdecode(255-letter_img,0)
+			cut_img = cv2.imdecode(255-letter_img,cv2.CV_LOAD_IMAGE_COLOR)
 			#cv2.imwrite('check.jpg', 255-letter_img)
 			time.sleep(0.1)
 			#img = open_image('check.jpg')
@@ -207,7 +207,7 @@ def letter_seg(lines_img, x_lines, i):
 			letter_img = cv2.resize(letter_img_tmp, dsize =(124, 124), interpolation = cv2.INTER_AREA)
 			White = [0,0]
 			letter_img= cv2.copyMakeBorder(letter_img.copy(),50,50,50,50,cv2.BORDER_CONSTANT,value=White)
-			cut_img = cv2.imdecode(255-letter_img,0)
+			cut_img = cv2.imdecode(255-letter_img,cv2.CV_LOAD_IMAGE_COLOR)
 			#cv2.imwrite('check.jpg', 255-letter_img)
 			time.sleep(0.1)
 			#img = open_image('check.jpg')
