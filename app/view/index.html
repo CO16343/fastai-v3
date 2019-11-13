@@ -14,7 +14,7 @@
     </p>
     <div class='content'>
       <div class='no-display'>
-        <input id='file-input-old'
+        <input id='file-input'
                class='no-display'
                type='file'
                name='file'
@@ -22,10 +22,6 @@
                onchange='showPicked(this)'>
       </div>
       <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
-      <form method=post enctype=multipart/form-data>
-            <input id='file-input' type=file name=file>
-            <input type=submit value=Upload>
-          </form>
       <div class='upload-label'>
         <label id='upload-label'>No file chosen</label>
       </div>
