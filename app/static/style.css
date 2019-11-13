@@ -22,9 +22,9 @@ body {
     color: #262626;
 }
 .text {
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #262626;
 }
 
@@ -36,6 +36,12 @@ body {
 }
 
 .process-label{
+    font-size: 25px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: #262626;
+}
+.result-label{
     font-size: 25px;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -93,7 +99,7 @@ button:focus {
 
 #boxes { 
      
-    height:500px 
+    height:480px 
 } 
 
 #leftbox { 
