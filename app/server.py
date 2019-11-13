@@ -210,7 +210,7 @@ def letter_seg(lines_img, x_lines, i):
 			#cut_img = cv2.imdecode(255-letter_img,1)
 			cv2.imwrite('/check.jpg', 255-letter_img)
 			time.sleep(0.1)
-			img = open_image('check.jpg')
+			img = open_image('/check.jpg')
 			pred_class,pred_idx,outputs = learn.predict(img)
 			#cv2_imshow(255-letter_img)
 			#print(pred_class)
