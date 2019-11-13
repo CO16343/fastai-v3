@@ -231,6 +231,7 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
+    print("*******************************")
     print(type(img_bytes))
     print(img)
 #    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
@@ -244,7 +245,7 @@ async def analyze(request):
 #	    final_out = final_out + letter_seg(lines_img, x_lines, i)	#all
 	    #print(i)
     #prediction = learn.predict(img)[0]-bytes
-    return JSONResponse({'result': final_out+str(type(img))+' and '+img + 'and' + str(type(img_bytes)) })
+    return JSONResponse({'result': final_out+'hoiih' })
 
 
 if __name__ == '__main__':
