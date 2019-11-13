@@ -231,7 +231,7 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     npimage = np.fromstring(img_bytes,np.uint8)
-    img = cv2.imdecode(npimage, 0)
+    img = cv2.imdecode(npimage, 1)
     #img = open_image(BytesIO(img_bytes))
     print("*******************************")
     print(type(img_bytes))
