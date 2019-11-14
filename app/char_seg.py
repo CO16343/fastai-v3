@@ -183,7 +183,10 @@ def start_main(src_img):
         for y in upperlines:
             final_thr[y][:] = 255	
         for y in lowerlines:
-            final_thr[y][:] = 255
+            if y+1>final_thr.shape[0]:
+		final_thr[y-1][:] = 255
+	    else:
+		final_thr[y][:] = 255
         for y in range(len(upperlines)):
             lines.append((upperlines[y], lowerlines[y]))
         
